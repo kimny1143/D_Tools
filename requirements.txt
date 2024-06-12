@@ -1,4 +1,4 @@
 streamlit
 PyPDF2
-pandas = 2.2.2
-openai = 1.33.0
+pandas
+openai
