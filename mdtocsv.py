@@ -60,7 +60,7 @@ if uploaded_file is not None:
 st.markdown("""
 ### 使用方法
 0.まずは高精度な生成AIを使ってPDFからMarkdownに変換してください。
-プロンプト例：「PDFの内容を分析しMarkdown化しDataFrameにて表示した後、csv変換を行いファイル出力してください。」
+プロンプト例：「PDFの内容を分析しMarkdown化しDataFrameにて表示した後、.mdファイル出力してください。」
 1. 「Browse files」ボタンをクリックしてMarkdownファイルをアップロードします。
 2. アップロードされたMarkdownの内容が表示されます。
 3. 「CSV に変換」ボタンをクリックします。
