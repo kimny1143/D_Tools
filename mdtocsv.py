@@ -49,10 +49,13 @@ def markdown_to_dataframe(markdown_content):
     df_reshaped = df[[col for col in columns_to_keep if col in df.columns]]
     
     # 列名を変更（必要に応じて）
-    df_reshaped = df_reshaped.rename(columns={
-        '楽曲名': '曲名',
-        '備考': 'RecSheet備考'
-    })
+    rename_dict = {'楽曲名': '曲名'}
+    
+    # 「備考」を含む列名があれば、それをRecSheet備考にリネーム
+    if note_column:
+        rename_dict[note_column] = 'RecSheet備考'
+    
+    df_reshaped = df_reshaped.rename(columns=rename_dict)
     
     return df_reshaped
 
