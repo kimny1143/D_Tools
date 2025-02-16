@@ -40,7 +40,12 @@ def markdown_to_dataframe(markdown_content):
     df = pd.DataFrame(data, columns=header)
     
     # 必要な列のみを抽出し、新しい順序で並べ替え
-    columns_to_keep = ['№', '楽曲名', '歌手名', 'DK№', 'OrgTime', '備考']
+    columns_to_keep = ['№', '楽曲名', '歌手名', 'DK№', 'OrgTime']
+    # 「備考」を含む列名を検索
+    note_column = next((col for col in df.columns if '備考' in col), None)
+    if note_column:
+        columns_to_keep.append(note_column)
+    
     df_reshaped = df[[col for col in columns_to_keep if col in df.columns]]
     
     # 列名を変更（必要に応じて）
